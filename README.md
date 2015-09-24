@@ -28,11 +28,15 @@ What is Node.js?
 
 Quotes from Ryan Dahl (creator of Node):
 
--"Node is a bunch of sugar (a set of libraries) written on top of the Google V8 Virtual Machine (modern Google Chrome)."
--"Node uses the awesomeness of V8 to do networky things, properly"
--"Node is not in the browser. Instead of a window object you have a process object"
--"This is the foundation of what you want underneath your web stack."
--"Front end frameworks go on top of Node."
+>"Node is a bunch of sugar (a set of libraries) written on top of the Google V8 Virtual Machine (modern Google Chrome)."
+
+>"Node uses the awesomeness of V8 to do networky things, properly"
+
+>"Node is not in the browser. Instead of a window object you have a process object"
+
+>"This is the foundation of what you want underneath your web stack."
+
+>"Front end frameworks go on top of Node."
 
 #### Assessments
 What is Node?
@@ -47,7 +51,16 @@ How do you call a function from a Node module?
 - Q&A ( < 20 min )
 
 #### Examples
-1. [Hello World](node-hello-world.js)
+```
+function sayHi() { 
+	console.log('Oh, Hey!') 
+};
+
+setTimeout(sayHi, 5000);
+
+console.log('Hi there');
+```
+
 1. [First Server](example-node-server.js)
 1. [First TCP Sockets](tcp-node-server.js)
 1. [Chat Server](node-chat-server.js)
