@@ -42,7 +42,6 @@ How do you call a function from a Node module?
 #### Examples
 
 This is your basic "Hello, World" Node code.
-
 Install Node and run it in the REPL.
 
 ```
@@ -54,8 +53,7 @@ setTimeout(sayHi, 5000);
 
 console.log('Hi there');
 ```
-Fine. But we really want to do something cool.
-
+Who cares? We want to do something cool.
 Let's launch an instance of a Node HTTP server:
 
 ```
@@ -73,10 +71,10 @@ s.listen(8124);
 
 console.log('Server running at http://127.0.0.1:8124/');
 ```
+In terminal type the following line to log messages to the REPL:
+``` curl -i http://localhost:8124/ ```
 
-We can do something similiar using sockets.
-
-Sockets are a TCP server.
+We can do something similiar using sockets. Node uses sockets as a TCP server.
 
 ```
 var net = require('net');
@@ -93,8 +91,7 @@ net.createServer(function(socket){
 server.listen(8124);
 
 ```
-
-Let's use our TCP server to build a chat client.
+Now let's use our TCP server to build a chat client:
 
 ```
 var net = require('net');
@@ -117,19 +114,22 @@ var s = net.createServer(function(socket){
 
 s.listen(8000);
 
-// From Terminal type:
-// telnet 10.1.4.239 8000
-// (or whatever IP address shows in Network Utility)
-// Now type some  more stuff and watch it show up on my computer
-
 ``` 
-Finally, in Terminal, let's check out how these processes run simultaneously:
+Now in Terminal, type the following and we can chat over the TCP network:
+
+```
+telnet 10.1.4.239 8000  // (or whatever IP address shows in Network Utility)
+
+```
+In traditional PHP Server connections, you open a connection, perform a task and then close the connection each time. Node keeps the connection open.
+
+Node is great for running a bunch of processes simultaneously. We can ask ab (Apache bench ) to simulate what would happen if 100 requests in parallel. With PHP, we would expect each request to take 2 seconds. Instead, Node will do them all at once:
 
 ```
 ab -n 100 -c 100 http://127.0.0.1:8000/
 
 ```
-
+This makes Node the perfect tool for reactive frameworks.
 
 #### Connections
 Why should we care about Node?
@@ -139,7 +139,12 @@ Why should we care about Node?
 - Lots of established SF companies and startups use Node for one or more products
 - Node is great when you need lots of simultaneous connections on one server
 
-Quotes from Ryan Dahl (creator of Node):
+### Awesome Links:
+[Ryan Dahl video from which this material was ripped](https://www.youtube.com/watch?v=jo_B4LTHi3I)
+
+[Node API documentation](https://nodejs.org/api/)
+
+### Quotes from Ryan Dahl (creator of Node):
 
 >"Node is a bunch of sugar (a set of libraries) written on top of the Google V8 Virtual Machine (modern Google Chrome)."
 
