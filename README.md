@@ -17,27 +17,66 @@ Students will be able to...
 - Launch a Node server
 - Callback a function from a Node module
 
-#### Scaffolding
-1. [Hello World](node-hello-world.js)
-1. [First Server](example-node-server.js)
-1. [First TCP Sockets](tcp-node-server.js)
-1. [Chat Server](node-chat-server.js)
 
-#### Framing
-What is Node.js?
+## What is Node.js? - Intro (20 mins)
+
+The makers of Node.js took javascript (which normally only runs in the browser) and made it available in your computer (on the server side). They took Google's V8 JavaScript Engine and gave it the ability to compile JS programs into machine code.
+
+Keep in mind, Node.js is strictly a tool to run JavaScript on a server – while it's possible to build web applications and APIs in straight JS, we'll actually be using a framework on top of Node called Express. <!-- It's actually quite similar to Sinatra - you'll like it! -->
+
+#### Why are people excited about Node?
+
+It's new and hot in the industry but why does it matter?
+
+A lot of developers and companies are excited because it allows you to build fast, scalable APIs and sites in JavaScript. We're _familiar_ with JS and being able to use it on the backend gives us the option to use a single programming language throughout an entire full-stack application.
+
+#### Asynchronous
+
+On top of that, one of the big differences is that Node.js is designed to be _event-driven_ and _asynchronous_. While earlier frameworks can only do one thing at a time, Node purposefully sends nearly everything to the background and keeps going.
+
+Imagine a paper delivery boy riding on his bike delivering papers every morning. Imagine he stops at each house, throws the paper on your doorstep, and waits to make sure you come out & pick it up before moving on to the next house. That would be what we'd call _blocking_ – each line of code finishes before moving on to the next line of code.
+
+Now imagine the paperboy throwing the newspaper on your porch but never stopping his bicycle; never stopping, he just keeps throwing papers on porches, so that by the time you pick it up he'll be 3 or 4 houses down. That would be _non-blocking_, or _asynchronous_.
+
+While it means you'll have to think & write your code a little differently than you did with a blocking framework like Sinatra or Rails, the benefit of speed is one thing a lot of folks are excited about with the introduction of Node.
+
+#### Ruby/Rails/Sinatra vs. JS/Node/Express
+
+While not strictly a competition (one of the skills you have to practice is knowing which frameworks you should use in which situations), let's compare some differences.
+
+__Why Choose Sinatra/Rails?__
+- Quickest path to building app with full CRUD
+- Better at working with complex data relationships - ActiveRecord rocks!
+- When full page refreshes aren't an issue
+- Synchronous programming is probably a little easier to grasp in building a straightforward program
+
+__Why Choose Node/Express?__
+- JavaScript everywhere, one language to rule them all
+- Asynchronous means generally faster performance
+- Better _concurrency_ – it can serve data to more users with fewer computer resources
+- Designed to make realtime applications
+
+#### Installing Node.js
+
+To check if we already have Node installed, type: ``node -v`` in terminal. You will see the Node version if it's installed.
+
+If it's not installed, you can install from the Node.js website, or better yet, use Homebrew like this:
+```
+brew install node
+```
+
+This will install both Node.js and npm, a package manager for Node similar to rubygems for Ruby. One of the advantages of using Homebrew is that you can update your versions easily like this:
+
+```
+brew upgrade node
+```
 
 
-#### Assessments
-What is Node?
-How do you code in the Node REPL?
-How do you launch a Node server?
-How do you call a function from a Node module?
+## Getting reacquainted with JS - Codealong (10 mins)
 
-#### Timing
-- Learning Objectives ( < 5 min )
-- Overview ( < 10 min )
-- Demo Exercises ( < 30 min )
-- Q&A ( < 20 min )
+Before we go further, you should try test it out. You'll have to start refreshing the JS side of your brain, so spend a couple minutes testing out some basic JS and running it with Node.
+
+There are two ways to do this – try them both.
 
 #### Examples
 
@@ -146,14 +185,3 @@ Why should we care about Node?
 
 [Node API documentation](https://nodejs.org/api/)
 
-### Quotes from Ryan Dahl (creator of Node):
-
->"Node is a bunch of sugar (a set of libraries) written on top of the Google V8 Virtual Machine (modern Google Chrome)."
-
->"Node uses the awesomeness of V8 to do networky things, properly"
-
->"Node is not in the browser. Instead of a window object you have a process object"
-
->"This is the foundation of what you want underneath your web stack."
-
->"Front end frameworks go on top of Node."
