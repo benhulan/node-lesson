@@ -59,17 +59,19 @@ Let's launch an instance of a Node HTTP server:
 ```
 var http = require('http');
 
+console.log('Hello');
+
 var s = http.createServer(function (request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.write('Hello ');
   setTimeout(function(){
   	response.end('World\n');
-  }, 2000);
+  }, 4000);
 });
 
 s.listen(8124);
 
 console.log('Server running at http://127.0.0.1:8124/');
+
 ```
 In terminal type the following line to log messages to the REPL:
 ``` curl -i http://localhost:8124/ ```
@@ -79,14 +81,14 @@ We can do something similiar using sockets. Node uses sockets as a TCP server.
 ```
 var net = require('net');
 
-net.createServer(function(socket){
+var server = net.createServer(function(socket){
 	socket.write('hello/n');
 	socket.write('world/n');
 
 	socket.on('data', function(data){
 		socket.write(data);
-	})
-})
+	});
+});
 
 server.listen(8124);
 

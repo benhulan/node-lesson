@@ -1,6 +1,6 @@
 function sayHi() { 
-	console.log('Oh, Hey!') 
-};
+	console.log('Oh, Hey!');
+}
 
 setTimeout(sayHi, 5000);
 

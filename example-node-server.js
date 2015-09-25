@@ -1,11 +1,12 @@
 var http = require('http');
 
+console.log('Hello');
+
 var s = http.createServer(function (request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.write('Hello ');
   setTimeout(function(){
   	response.end('World\n');
-  }, 2000);
+  }, 4000);
 });
 
 s.listen(8124);
