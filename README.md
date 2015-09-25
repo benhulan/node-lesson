@@ -72,13 +72,7 @@ brew upgrade node
 ```
 
 
-## Getting reacquainted with JS - Codealong (10 mins)
-
-Before we go further, you should try test it out. You'll have to start refreshing the JS side of your brain, so spend a couple minutes testing out some basic JS and running it with Node.
-
-There are two ways to do this – try them both.
-
-#### Examples
+## Examples
 
 This is your basic "Hello, World" Node code.
 Install Node and run it in the REPL.
